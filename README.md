@@ -35,6 +35,7 @@ npm start
 Run both backend and frontend servers:
 
 Make sure both Flask and React servers are running to see the app in action!
+overview of WEB app:
 ![image](https://github.com/user-attachments/assets/fa3f9c81-238c-4a49-b024-44dd22c50ee5)
 
 
