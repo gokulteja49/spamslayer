@@ -14,38 +14,23 @@ APIs: Gmail API (optional integration for real email fetching)
 Installation & Setup:
 Clone the repository:
 
-bash
-Copy
-Edit
+
 git clone https://github.com/yourusername/SpamSlayer.git
 Backend Setup (Flask):
 
 Install Python dependencies:
-
-bash
-Copy
-Edit
 cd backend
 pip install -r requirements.txt
 
 Run the Flask backend:
-
-bash
-Copy
-Edit
 python app.py
 Frontend Setup (React):
 
 Install Node.js dependencies:
-bash
-Copy
-Edit
 cd frontend
 npm install
+
 Start the React development server:
-bash
-Copy
-Edit
 npm start
 Run both backend and frontend servers:
 
