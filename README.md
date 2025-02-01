@@ -21,12 +21,15 @@ git clone https://github.com/yourusername/SpamSlayer.git
 Backend Setup (Flask):
 
 Install Python dependencies:
+
 bash
 Copy
 Edit
 cd backend
 pip install -r requirements.txt
+
 Run the Flask backend:
+
 bash
 Copy
 Edit
