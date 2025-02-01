@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Inbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .email {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .email-header {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            position: relative; /* Added for positioning */
+        }
+        .email-body {
+            padding: 10px;
+            display: none;
+        }
+        .spam {
+            background-color: red;
+            color: white;
+        }
+        .spam .email-header {
+            background-color: red; /* Change background color for spam emails */
+            color: white; /* Change text color for spam emails */
+        }
+        .spam .email-header .spam-indicator {
+            position: absolute;
+            top: 10px; /* Adjust position if needed */
+            right: 10px; /* Adjust position if needed */
+            color: black; /* Set text color for spam indicator */
+            font-weight: bold; /* Ensure spam text is bold */
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Gmail Inbox</h1>
+
+    <div>
+        {% for message in messages %}
+            <div class="email {% if message.spam_alert %}spam{% endif %}">
+                <div class="email-header">
+                    <p><strong>From:</strong> {{ message.from }}</p>
+                    <p><strong>Subject:</strong> {{ message.subject }}</p>
+                    <p><strong>Date:</strong> {{ message.date }}</p>
+                    <p><strong>Snippet:</strong> {{ message.snippet }}</p>
+                    <button class="view-btn btn btn-primary" data-email-id="{{ message.id }}">View Email</button>
+                    {% if message.spam_alert %}
+                        <span class="spam-indicator">Spam</span>
+                    {% else %}
+                        <span class="spam-indicator">Not Spam</span>
+                    {% endif %}
+                </div>
+                <div id="body_{{ message.id }}" class="email-body">
+                    <p><strong>Body:</strong></p>
+                    <p>{{ message.body }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.view-btn').click(function() {
+                var emailId = $(this).data('email-id');
+                $('#body_' + emailId).toggle();
+            });
+        });
+    </script>
+</body>
+</html>

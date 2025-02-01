@@ -1,0 +1,59 @@
+/* static/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-section a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #4CAF50;
+}
+
+.auth-section a:hover {
+    background-color: #45a049;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.email-list {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.email-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.email-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.email-list li:last-child {
+    border-bottom: none;
+}
