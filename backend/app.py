@@ -21,7 +21,7 @@ SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 logging.basicConfig(level=logging.DEBUG)
 
-# Load ML model and vectorizer
+
 with open('vectorizer.pkl', 'rb') as f:
     tfidf = pickle.load(f)
 
