@@ -15,7 +15,7 @@ Installation & Setup:
 Clone the repository:
 
 
-git clone https://github.com/yourusername/SpamSlayer.git
+git clone https://github.com/gokulteja49/SpamSlayer.git
 Backend Setup (Flask):
 
 Install Python dependencies:
